@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div style="background-color:lightblue">
+	<h1>Predict Alzheimer Disease</h1>
+  
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        Clusterin Apo J: <input type="text" name="Clusterin_Apo_J" placeholder="Clusterin Apo J" required="required" /></br></br>
+        Cystatin C: <input type="text" name="Cystatin_C" placeholder="Cystatin C" required="required" /></br></br>
+        FAS: <input type="text" name="FAS" placeholder="FAS" required="required" /></br></br>
+        NrCAM: <input type="text" name="NrCAM" placeholder="NrCAM" required="required" /></br></br>
+        Tau: <input type="text" name="tau" placeholder="Tau" required="required" /></br></br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></br></br>
+    </form>
+
+   <br>
+   <br>
+   
+   <h1>{{ prediction_text }}</h1>
+   
+
+ </div>
+
+
+</body>
+</html>
